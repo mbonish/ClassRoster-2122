@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb858894-8f39-426b-a67a-2d00405feab7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ClassRoster/src/main/java/ClassRoster/Controller/ClassRosterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClassRoster/src/main/java/ClassRoster/UI/UserIO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClassRoster/src/main/java/ClassRoster/UI/UserIOConsoleImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClassRoster/src/main/java/ClassRoster/dto/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClassRoster/src/main/java/ClassRoster/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ClassRoster-2122.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/ClassRoster.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/src/main/java/classroster/UI/UserIO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/src/main/java/classroster/UI/UserIOConsoleImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/src/main/java/classroster/controler/ClassRosterController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/src/main/java/classroster/dao/ClassRosterDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClassRoster/src/main/java/ClassRoster/dao/ClassRosterDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/src/main/java/classroster/dao/ClassRosterDaoFileImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClassRoster/src/main/java/ClassRoster/dao/ClassRosterDaoFileImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/src/main/java/classroster/dto/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassRoster/src/main/java/classroster/main/App.class" beforeDir="false" />
-    </list>
+    <list default="true" id="cb858894-8f39-426b-a67a-2d00405feab7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
