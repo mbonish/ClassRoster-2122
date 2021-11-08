@@ -1,8 +1,7 @@
-package classroster.dao;
+package ClassRoster.dao;
 
-import classroster.dto.Student;
 
-import java.util.List;
+import ClassRoster.dto.Student;
 
 public interface ClassRosterDao {
     /**

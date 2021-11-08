@@ -1,11 +1,11 @@
-package classroster.dto;
+package ClassRoster.dto;
 
 public class Student {
     private String firstName;
     private String lastName;
     private String studentId;
     private String cohort;
-//no setter for the student id field
+    //no setter for the student id field
     // studentId is passed in as a parameter of the constructor
     public Student (String studentId){
         this.studentId = studentId;
@@ -30,11 +30,11 @@ public class Student {
         this.lastName = lastName;
     }
 
-     public String getCohort(){
+    public String getCohort(){
         return cohort;
-     }
-     public void setCohort(String cohort){
+    }
+    public void setCohort(String cohort){
         this.cohort = cohort;
-     }
+    }
 
 }

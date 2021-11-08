@@ -1,6 +1,6 @@
-package classroster.dao;
+package ClassRoster.dao;
 
-import classroster.dto.Student;
+import ClassRoster.dto.Student;
 
 import java.util.HashMap;
 import java.util.Map;
