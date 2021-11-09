@@ -1,7 +1,6 @@
 package ClassRoster.dao;
-
-
 import ClassRoster.dto.Student;
+import java.util.List;
 
 public interface ClassRosterDao {
     /**
@@ -16,13 +15,16 @@ public interface ClassRosterDao {
      * student id if it exists, null otherwise
      */
     Student addStudent(String studentId, Student student);
+
+
     /**
      * Returns a String array containing the student ids of all
      * students in the roster.
      *
      * @return String array containing the ids of all the students
      * in the roster
-    List<Student> getAllStudent();
+     */
+    List<Student> getAllStudents();
 
     /**
      * Returns the student object associated with the given student id.
@@ -32,8 +34,9 @@ public interface ClassRosterDao {
      * @return the Student object associated with the given student id,
      * null if no such student exists
      */
-
     Student getStudent(String studentId);
+
+
     /**
      * Removes from the roster the student associated with the given id.
      * Returns the student object that is being removed or null if
@@ -44,4 +47,6 @@ public interface ClassRosterDao {
      * was associated with the given student id
      */
     Student removeStudent(String studentId);
+
+
 }

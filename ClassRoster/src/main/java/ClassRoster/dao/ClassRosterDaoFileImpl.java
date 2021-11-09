@@ -2,10 +2,14 @@ package ClassRoster.dao;
 
 import ClassRoster.dto.Student;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ClassRosterDaoFileImpl implements ClassRosterDao {
+
+    private Map<String, Student> students = new HashMap<>();
 
 
     /**
@@ -25,6 +29,20 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
         return newStudent;
     }
 
+
+    /**
+     * Returns a String array containing the student ids of all
+     * students in the roster.
+     *
+     * @return String array containing the ids of all the students
+     * in the roster
+     */
+    @Override
+    public List<Student> getAllStudents(){
+        return new ArrayList<Student>(students.values());
+    }
+
+
     /**
      * Returns a String array containing the student ids of all
      * students in the roster.
@@ -32,18 +50,13 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
      * @param studentId ID of the student to retrieve
      * @return String array containing the ids of all the students
      * in the roster
-     * List<Student> getAllStudent();
-     * <p>
-     * /**
-     * Returns the student object associated with the given student id.
-     * Returns null if no such student exists
-     * @return the Student object associated with the given student id,
-     * null if no such student exists
-     */
+   */
     @Override
     public Student getStudent(String studentId) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return students.get(studentId);
     }
+
+
 
     /**
      * Removes from the roster the student associated with the given id.
@@ -56,9 +69,9 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
      */
     @Override
     public Student removeStudent(String studentId) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Student removedStudent =students.remove(studentId);
+        return removedStudent;
     }
 
-    private Map<String, Student> students = new HashMap<>();
 }
 

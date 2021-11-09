@@ -18,7 +18,7 @@ public class Student {
         return firstName;
     }
 
-    public void setFirstName(){
+    public void setFirstName(String firstName){
         this.firstName = firstName;
     }
 
