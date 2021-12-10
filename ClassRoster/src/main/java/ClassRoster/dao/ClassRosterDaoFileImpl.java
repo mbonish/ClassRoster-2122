@@ -2,9 +2,7 @@ package ClassRoster.dao;
 
 import ClassRoster.dto.Student;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.*;
 
 public class ClassRosterDaoFileImpl implements ClassRosterDao {
@@ -25,8 +23,11 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
      * student id if it exists, null otherwise
      */
     @Override
-    public Student addStudent(String studentId, Student student) {
+    public Student addStudent(String studentId, Student student)
+            throws ClassRosterDaoException {
+        loadRoster();
         Student newStudent = students.put(studentId, student);
+        writeRoster();
         return newStudent;
     }
 
@@ -39,8 +40,10 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
      * in the roster
      */
     @Override
-    public List<Student> getAllStudents() {
-        return new ArrayList<Student>(students.values());
+    public List<Student> getAllStudents()
+            throws ClassRosterDaoException {
+        loadRoster();
+        return new ArrayList(students.values());
     }
 
 
@@ -53,7 +56,9 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
      * in the roster
      */
     @Override
-    public Student getStudent(String studentId) {
+    public Student getStudent(String studentId)
+            throws ClassRosterDaoException {
+        loadRoster();
         return students.get(studentId);
     }
 
@@ -68,8 +73,11 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
      * was associated with the given student id
      */
     @Override
-    public Student removeStudent(String studentId) {
+    public Student removeStudent(String studentId)
+            throws ClassRosterDaoException {
+        loadRoster();
         Student removedStudent = students.remove(studentId);
+        writeRoster();
         return removedStudent;
     }
 
@@ -147,7 +155,63 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
         }
         scanner.close();
     }
-}
+
+    private String marshallStudent(Student aStudent){
+        // We need to turn a Student object into a line of text for our file.
+        // For example, we need an in memory object to end up like this:
+        // 4321::Charles::Babbage::Java-September1842
+
+        // It's not a complicated process. Just get out each property,
+        // and concatenate with our DELIMITER as a kind of spacer.
+        String studentAsText = aStudent.getStudentId() + DELIMITER;
+
+        studentAsText += aStudent.getFirstName() + DELIMITER;
+
+        studentAsText +=aStudent.getLastName() + DELIMITER;
+
+        studentAsText += aStudent.getCohort();
+        return studentAsText;
+    }
+
+    /**
+     * Writes all students in the roster out to a ROSTER_FILE. See loadRoster for f
+     * for file format.
+     * @throws ClassRosterDaoException
+     */
+    private void writeRoster() throws ClassRosterDaoException {
+        PrintWriter out;
+
+        try {
+            out = new PrintWriter(new FileWriter(ROSTER_FILE));
+        } catch (IOException e) {
+            throw new ClassRosterDaoException(" Could not save student data.", e
+            );
+        }
+        /**
+         * Write out the Student objects to the roster file.
+         * NOTE TO THE APPRENTICES: We could just grab the student map,
+         * get the Collection of Student and iterate over then. BUT we have already created
+         * a method that gets a list of students--so we re-use it.
+         */
+            String studentAsText;
+            List<Student> studentList = this.getAllStudents();
+            for(Student currentStudent: studentList){
+                //turn a student into a string
+                studentAsText = marshallStudent(currentStudent);
+
+                //write the Student object to the file
+                out.println(studentAsText);
+
+                //force PritWriter to write line to the file
+                out.flush();
+
+                //clean up
+                out.close();
+            }
+        }
+
+    }
+
 
 
 

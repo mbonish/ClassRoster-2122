@@ -6,10 +6,11 @@ import ClassRoster.UI.ClassRosterView;
 import ClassRoster.UI.UserIO;
 import ClassRoster.UI.UserIOConsoleImpl;
 import ClassRoster.dao.ClassRosterDao;
+import ClassRoster.dao.ClassRosterDaoException;
 import ClassRoster.dao.ClassRosterDaoFileImpl;
 
 class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassRosterDaoException {
         UserIO myIO = new UserIOConsoleImpl();
         ClassRosterView myView = new ClassRosterView(myIO);
         ClassRosterDao myDao = new ClassRosterDaoFileImpl();
